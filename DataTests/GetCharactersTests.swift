@@ -60,15 +60,13 @@ final class GetCharactersTests: XCTestCase {
     func test_get_character_should_not_complete_if_sut_has_been_deallocated() async throws {
         let httpClientSpy = HTTPClientSpy()
         var sut: RemoteGetCharacters? = RemoteGetCharacters(url: makeURL(theme: "characters"), httpClient: httpClientSpy)
-        var result: GetCharacters.Result?
+        var result: RemoteGetCharacters.Result?
         do {
             guard let charactersModel = try await makeCharactersModel() else { return }
             sut?.getCharactersModel(charactersModel) { result = $0 }
             sut = nil
             httpClientSpy.completeWithError(.unexpected)
             XCTAssertNil(result)
-        } catch {
-            print("error...\(error.localizedDescription)")
         }
     }
 }

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3F290E142A2A4E180030C86E /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45CA7A2A293E0000B920EB /* TestFactories.swift */; };
 		3F290E152A2A4EA10030C86E /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45CA7B2A293E0000B920EB /* XCTestCase+Extension.swift */; };
+		3F290E192A2A611E0030C86E /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45CA652A293DFF00B920EB /* HTTPClientSpy.swift */; };
+		3F290E1A2A2A645A0030C86E /* SupportsLocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45CA792A293E0000B920EB /* SupportsLocalData.swift */; };
+		3F290E1B2A2A647F0030C86E /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45CA1B2A293CA900B920EB /* HTTPError.swift */; };
+		3F290E1C2A2A649E0030C86E /* HTTPGetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45CA1A2A293CA900B920EB /* HTTPGetClient.swift */; };
 		3F45C98C2A293BCE00B920EB /* ComicShopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45C98B2A293BCE00B920EB /* ComicShopApp.swift */; };
 		3F45C98E2A293BCE00B920EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45C98D2A293BCE00B920EB /* ContentView.swift */; };
 		3F45C9902A293BD000B920EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F45C98F2A293BD000B920EB /* Assets.xcassets */; };
@@ -219,7 +223,6 @@
 		3F45CA882A293E0100B920EB /* GetCreatorsModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCreatorsModelFactory.swift; sourceTree = "<group>"; };
 		3F45CA892A293E0100B920EB /* GetCharactersModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCharactersModelFactory.swift; sourceTree = "<group>"; };
 		3F45CB142A2942B200B920EB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		3F45CB1A2A2952B300B920EB /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 		3F89C4AE2A29718A004E95D1 /* AlamofireAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapter.swift; sourceTree = "<group>"; };
 		3F89C4B22A2973B6004E95D1 /* AlamofireAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapterTests.swift; sourceTree = "<group>"; };
 		3F89C4B82A2A2C77004E95D1 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
@@ -390,7 +393,6 @@
 				3F45CA602A293DFF00B920EB /* GetComicsTests.swift */,
 				3F45CA882A293E0100B920EB /* GetCreatorsModelFactory.swift */,
 				3F45CA5F2A293DFF00B920EB /* GetCreatorsTests.swift */,
-				3F45CA772A293E0000B920EB /* HTTP */,
 				3F45CA652A293DFF00B920EB /* HTTPClientSpy.swift */,
 				3F45CA792A293E0000B920EB /* SupportsLocalData.swift */,
 				3F45CA7A2A293E0000B920EB /* TestFactories.swift */,
@@ -487,15 +489,6 @@
 				3F45CA1F2A293CA900B920EB /* RemoteGetCharacters.swift */,
 			);
 			path = UseCases;
-			sourceTree = "<group>";
-		};
-		3F45CA772A293E0000B920EB /* HTTP */ = {
-			isa = PBXGroup;
-			children = (
-				3F45CB1A2A2952B300B920EB /* HTTPClientSpy.swift */,
-			);
-			name = HTTP;
-			path = ../../../ComicVerseData/ComicVerseData/ComicVerseDataTests/HTTP;
 			sourceTree = "<group>";
 		};
 		3F45CB0E2A2942AC00B920EB /* Frameworks */ = {
@@ -968,10 +961,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F89C4BB2A2A2FBA004E95D1 /* XCTestCase+Extension.swift in Sources */,
+				3F290E192A2A611E0030C86E /* HTTPClientSpy.swift in Sources */,
 				3F89C4B42A2973B6004E95D1 /* AlamofireAdapterTests.swift in Sources */,
 				3F89C4B02A29718A004E95D1 /* AlamofireAdapter.swift in Sources */,
+				3F290E1C2A2A649E0030C86E /* HTTPGetClient.swift in Sources */,
+				3F290E1A2A2A645A0030C86E /* SupportsLocalData.swift in Sources */,
 				3F89C4B72A2A2A8C004E95D1 /* TestFactories.swift in Sources */,
 				3F45C9ED2A293C2300B920EB /* InfraTests.swift in Sources */,
+				3F290E1B2A2A647F0030C86E /* HTTPError.swift in Sources */,
 				3F89C4BA2A2A2C77004E95D1 /* URLProtocolStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
