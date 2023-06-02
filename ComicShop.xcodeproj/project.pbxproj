@@ -13,6 +13,9 @@
 		3F290E1A2A2A645A0030C86E /* SupportsLocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45CA792A293E0000B920EB /* SupportsLocalData.swift */; };
 		3F290E1B2A2A647F0030C86E /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45CA1B2A293CA900B920EB /* HTTPError.swift */; };
 		3F290E1C2A2A649E0030C86E /* HTTPGetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45CA1A2A293CA900B920EB /* HTTPGetClient.swift */; };
+		3F290E2A2A2A682C0030C86E /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F290E222A2A682B0030C86E /* Presentation.framework */; };
+		3F290E2F2A2A682C0030C86E /* PresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F290E2E2A2A682C0030C86E /* PresentationTests.swift */; };
+		3F290E302A2A682C0030C86E /* Presentation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F290E242A2A682B0030C86E /* Presentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F45C98C2A293BCE00B920EB /* ComicShopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45C98B2A293BCE00B920EB /* ComicShopApp.swift */; };
 		3F45C98E2A293BCE00B920EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45C98D2A293BCE00B920EB /* ContentView.swift */; };
 		3F45C9902A293BD000B920EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F45C98F2A293BD000B920EB /* Assets.xcassets */; };
@@ -118,6 +121,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3F290E2B2A2A682C0030C86E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F45C9802A293BCE00B920EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F290E212A2A682B0030C86E;
+			remoteInfo = Presentation;
+		};
 		3F45C9992A293BD100B920EB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3F45C9802A293BCE00B920EB /* Project object */;
@@ -171,6 +181,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3F290E222A2A682B0030C86E /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F290E242A2A682B0030C86E /* Presentation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Presentation.h; sourceTree = "<group>"; };
+		3F290E292A2A682B0030C86E /* PresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F290E2E2A2A682C0030C86E /* PresentationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationTests.swift; sourceTree = "<group>"; };
 		3F45C9882A293BCE00B920EB /* ComicShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComicShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F45C98B2A293BCE00B920EB /* ComicShopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicShopApp.swift; sourceTree = "<group>"; };
 		3F45C98D2A293BCE00B920EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -229,6 +243,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3F290E1F2A2A682B0030C86E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F290E262A2A682B0030C86E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F290E2A2A2A682C0030C86E /* Presentation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3F45C9852A293BCE00B920EB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -295,6 +324,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F290E232A2A682B0030C86E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3F290E242A2A682B0030C86E /* Presentation.h */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		3F290E2D2A2A682C0030C86E /* PresentationTests */ = {
+			isa = PBXGroup;
+			children = (
+				3F290E2E2A2A682C0030C86E /* PresentationTests.swift */,
+			);
+			path = PresentationTests;
+			sourceTree = "<group>";
+		};
 		3F45C97F2A293BCE00B920EB = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +351,8 @@
 				3F45C9D12A293C0C00B920EB /* DataTests */,
 				3F45C9E12A293C1F00B920EB /* Infra */,
 				3F45C9EB2A293C2300B920EB /* InfraTests */,
+				3F290E232A2A682B0030C86E /* Presentation */,
+				3F290E2D2A2A682C0030C86E /* PresentationTests */,
 				3F45C9892A293BCE00B920EB /* Products */,
 				3F45CB0E2A2942AC00B920EB /* Frameworks */,
 			);
@@ -322,6 +369,8 @@
 				3F45C9CD2A293C0C00B920EB /* DataTests.xctest */,
 				3F45C9E02A293C1E00B920EB /* Infra.framework */,
 				3F45C9E72A293C2100B920EB /* InfraTests.xctest */,
+				3F290E222A2A682B0030C86E /* Presentation.framework */,
+				3F290E292A2A682B0030C86E /* PresentationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -519,6 +568,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		3F290E1D2A2A682B0030C86E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F290E302A2A682C0030C86E /* Presentation.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3F45C9B52A293BF700B920EB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -546,6 +603,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		3F290E212A2A682B0030C86E /* Presentation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F290E312A2A682C0030C86E /* Build configuration list for PBXNativeTarget "Presentation" */;
+			buildPhases = (
+				3F290E1D2A2A682B0030C86E /* Headers */,
+				3F290E1E2A2A682B0030C86E /* Sources */,
+				3F290E1F2A2A682B0030C86E /* Frameworks */,
+				3F290E202A2A682B0030C86E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Presentation;
+			productName = Presentation;
+			productReference = 3F290E222A2A682B0030C86E /* Presentation.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3F290E282A2A682B0030C86E /* PresentationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F290E342A2A682C0030C86E /* Build configuration list for PBXNativeTarget "PresentationTests" */;
+			buildPhases = (
+				3F290E252A2A682B0030C86E /* Sources */,
+				3F290E262A2A682B0030C86E /* Frameworks */,
+				3F290E272A2A682B0030C86E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F290E2C2A2A682C0030C86E /* PBXTargetDependency */,
+			);
+			name = PresentationTests;
+			productName = PresentationTests;
+			productReference = 3F290E292A2A682B0030C86E /* PresentationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3F45C9872A293BCE00B920EB /* ComicShop */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F45C9AC2A293BD100B920EB /* Build configuration list for PBXNativeTarget "ComicShop" */;
@@ -704,6 +797,12 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					3F290E212A2A682B0030C86E = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					3F290E282A2A682B0030C86E = {
+						CreatedOnToolsVersion = 14.3;
+					};
 					3F45C9872A293BCE00B920EB = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -757,11 +856,27 @@
 				3F45C9CC2A293C0C00B920EB /* DataTests */,
 				3F45C9DF2A293C1E00B920EB /* Infra */,
 				3F45C9E62A293C2000B920EB /* InfraTests */,
+				3F290E212A2A682B0030C86E /* Presentation */,
+				3F290E282A2A682B0030C86E /* PresentationTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3F290E202A2A682B0030C86E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F290E272A2A682B0030C86E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3F45C9862A293BCE00B920EB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -823,6 +938,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3F290E1E2A2A682B0030C86E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F290E252A2A682B0030C86E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F290E2F2A2A682C0030C86E /* PresentationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3F45C9842A293BCE00B920EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -976,6 +1106,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3F290E2C2A2A682C0030C86E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F290E212A2A682B0030C86E /* Presentation */;
+			targetProxy = 3F290E2B2A2A682C0030C86E /* PBXContainerItemProxy */;
+		};
 		3F45C99A2A293BD100B920EB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3F45C9872A293BCE00B920EB /* ComicShop */;
@@ -1004,6 +1139,110 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		3F290E322A2A682C0030C86E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NXZ6YP6W9M;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trtechnology.Presentation;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3F290E332A2A682C0030C86E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NXZ6YP6W9M;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trtechnology.Presentation;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3F290E352A2A682C0030C86E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NXZ6YP6W9M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trtechnology.PresentationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3F290E362A2A682C0030C86E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NXZ6YP6W9M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trtechnology.PresentationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		3F45C9AA2A293BD100B920EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1542,6 +1781,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3F290E312A2A682C0030C86E /* Build configuration list for PBXNativeTarget "Presentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F290E322A2A682C0030C86E /* Debug */,
+				3F290E332A2A682C0030C86E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F290E342A2A682C0030C86E /* Build configuration list for PBXNativeTarget "PresentationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F290E352A2A682C0030C86E /* Debug */,
+				3F290E362A2A682C0030C86E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3F45C9832A293BCE00B920EB /* Build configuration list for PBXProject "ComicShop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
