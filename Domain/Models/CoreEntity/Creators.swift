@@ -41,10 +41,10 @@ public struct CreatorsModel: Model {
     public var thumbnail: MarvelImage?
     public var series: Array<SeriesModel>?
     public var stories: Array<StoriesModel>?
-    public var commics: Array<CommicsModel>?
+    public var commics: Array<ComicsModel>?
     public var events: Array<EventsModel>?
     
-    public init(id: Int?, firstName: String?, middleName: String?, lastName: String?, suffix: String?, fullName: String?, modified: Date?, resourceURI: String?, urls: Array<URL>?, thumbnail: MarvelImage?, series: Array<SeriesModel>?, stories: Array<StoriesModel>?, commics: Array<CommicsModel>?, events: Array<EventsModel>?) throws {
+    public init(id: Int?, firstName: String?, middleName: String?, lastName: String?, suffix: String?, fullName: String?, modified: Date?, resourceURI: String?, urls: Array<URL>?, thumbnail: MarvelImage?, series: Array<SeriesModel>?, stories: Array<StoriesModel>?, commics: Array<ComicsModel>?, events: Array<EventsModel>?) throws {
         self.id = id
         self.firstName = firstName
         self.middleName = middleName
@@ -74,7 +74,7 @@ public struct CreatorsModel: Model {
             self.thumbnail = try container.decodeIfPresent(MarvelImage.self, forKey: .thumbnail)
             self.series = try container.decodeIfPresent([SeriesModel].self, forKey: .series)
             self.stories = try container.decodeIfPresent([StoriesModel].self, forKey: .stories)
-            self.commics = try container.decodeIfPresent([CommicsModel].self, forKey: .commics)
+            self.commics = try container.decodeIfPresent([ComicsModel].self, forKey: .commics)
             self.events = try container.decodeIfPresent([EventsModel].self, forKey: .events)
         } catch {
             print("error:\(error.localizedDescription)")

@@ -8,7 +8,7 @@
 import Foundation
 import Domain
 
-func makeCommicsModel() -> CommicsModel? {
+func makeCommicsModel() -> ComicsModel? {
     
     do {
         guard let comics = try LoadLocal.loadBundleContentComics() else { return nil }

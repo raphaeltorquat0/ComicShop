@@ -9,7 +9,7 @@ import Foundation
 
 public protocol GetCreators {
     typealias Result = Swift.Result<CreatorsModel, DomainErrors>
-    func getCreators(_ getCreators: CreatorsModel, completion: @escaping(Result) -> Void)
+    func getCreators(_ completion: @escaping(Result) -> Void)
 }
 
 public struct GetCreatorsModel: GetData {

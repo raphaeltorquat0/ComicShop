@@ -9,40 +9,51 @@ import XCTest
 import Domain
 
 final class GetCharactersTests: XCTestCase {
-
+    
     func test_get_character_should_call_httpClient_with_correct_url() async throws {
         let url = makeURL(theme: "characters")
         let (sut, httpClientSpy) = try await makeSUT(url: url)
         do {
             guard let makeCharacters = try await makeCharactersModel() else { return }
-            sut.getCharactersModel(makeCharacters) { _ in }
+            sut.getCharactersModel() { _ in }
             XCTAssertEqual(httpClientSpy.urls, [url])
-        } catch {
-            print("error..\(error.localizedDescription)")
         }
-        
     }
     
     func test_get_character_should_call_httpClient_with_correct_value() async throws {
         let (sut, httpClientSpy) = try await makeSUT()
-        do {
-            guard let charactersModel = try await makeCharactersModel() else { return }
-            
-            sut.getCharactersModel(charactersModel) { _ in }
-            XCTAssertEqual(httpClientSpy.getCharacters(), charactersModel.toData())
-        } catch {
-            print("error..\(error.localizedDescription)")
+        guard let makeCharacters = try await makeCharactersModel() else {
+            XCTFail("Failed to create makeCharactersModel")
+            return
         }
+        
+        sut.getCharactersModel { [weak self] result in
+            guard let self = self else {
+                XCTFail("Self is deallocated")
+                return
+            }
+            
+            switch result {
+            case .success(let characterModel):
+                do {
+                    let characterModelData = try JSONEncoder().encode(characterModel)
+                    let mockupValue = try JSONDecoder().decode(CharactersModel.self, from: characterModelData)
+                    XCTAssertEqual(mockupValue, characterModel, "Expected charactersModel to be equal to mockupValue")
+                } catch {
+                    XCTFail("Failed to encode/decode charactersModel: \(error)")
+                }
+            case .failure(let error):
+                XCTFail("Failed to get charactersModel: \(error)")
+            }
+        }
+        XCTAssertEqual(httpClientSpy.getCharacters(), makeCharacters.toData(), "Expected httpClientSpy.getCharacters() to be equal to makeCharacters.toData()")
     }
-    
+
     func test_get_characte_should_complete_with_error_if_completes_with_wrong_key() async throws {
         let (sut, httpClientSpy) = try await makeSUT()
-//        let httpClientSpy = HTTPClientSpy()
-        do {
-            try? await expect(sut, completeWith: .failure(.invalidCredentials), when: {
+        try await expect(sut, completeWith: .failure(.invalidCredentials), when: {
                 httpClientSpy.completeWithError(.emptyParameter)
-            })
-        }
+        })
     }
     
     func test_get_character_should_complete_with_error_if_completes_are_missing_key() async throws {
@@ -62,11 +73,19 @@ final class GetCharactersTests: XCTestCase {
         var sut: RemoteGetCharacters? = RemoteGetCharacters(url: makeURL(theme: "characters"), httpClient: httpClientSpy)
         var result: RemoteGetCharacters.Result?
         do {
-            guard let charactersModel = try await makeCharactersModel() else { return }
-            sut?.getCharactersModel(charactersModel) { result = $0 }
+            guard let charactersModel = try await makeCharactersModel() else {
+                XCTFail("Failed to create makeCharactersModel")
+                return
+            }
+            sut?.getCharactersModel { receivedResult in
+                result = receivedResult
+            }
             sut = nil
-            httpClientSpy.completeWithError(.unexpected)
-            XCTAssertNil(result)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                httpClientSpy.completeWithError(.limitInvalidOrBellow1)
+            }
+            try await Task.sleep(nanoseconds: 10000)
+            XCTAssertNil(result, "Expected result to be nil")
         }
     }
 }
@@ -82,25 +101,21 @@ extension GetCharactersTests {
         return (sut, httpClientSpy)
     }
     
-    func expect(_ sut: RemoteGetCharacters, completeWith expectedResult: GetCharacters.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) async throws {
+    func expect( _ sut: RemoteGetCharacters, completeWith expectedResult: GetCharacters.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) async throws {
         let exp = expectation(description: "waiting...")
-        do {
-            try await sut.getCharactersModel(makeCharactersModel()!) { receivedResult in
+        sut.getCharactersModel { receivedResult in
             switch(expectedResult, receivedResult) {
-            case(.failure(let expectedError), .failure(let receivedError)):
-                XCTAssertEqual(expectedError, receivedError, file: file, line: line)
-            case (.success(let expectedCharacters), .success(let receivedCharacters)):
-                XCTAssertEqual(expectedCharacters, receivedCharacters, file:  file, line:  line)
-            default:
-                XCTFail("-> Expected: \(expectedResult) \n -> -> Received: \(receivedResult) instead", file: file, line: line)
+                case(.failure(let expectedError), .failure(let receivedError)):
+                    XCTAssertEqual(expectedError,  receivedError, file: file, line: line)
+                case (.success(let expectedCharacters), .success(let receivedCharacters)):
+                    XCTAssertEqual(expectedCharacters, receivedCharacters, file: file, line: line)
+                default:
+                    XCTFail("-> Expected:\(expectedResult) \n -> -> Received\(receivedResult) instead", file: file, line: line)
             }
             exp.fulfill()
         }
-            action()
-//            wait(for: [exp], timeout: 1)
-            await fulfillment(of: [exp], timeout: 1)
-        } catch {
-            print("error...\(error.localizedDescription)")
-        }
+        action()
+        await fulfillment(of: [exp], timeout: 1)
     }
+    
 }

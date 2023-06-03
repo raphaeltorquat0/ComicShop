@@ -39,7 +39,7 @@ public struct SeriesModel: Model {
     public var rating: String?
     public var modified: Date?
     public var thumbnail: MarvelImage?
-    public var comics: Array<CommicsModel>?
+    public var comics: Array<ComicsModel>?
     public var stories: Array<StoriesModel>?
     public var events: Array<EventsModel>?
     public var characters: Array<CharactersModel>?
@@ -47,7 +47,7 @@ public struct SeriesModel: Model {
     public var next: Array<SeriesModel>?
     public var previous: Array<SeriesModel>?
     
-    public init(id: Int?, title: String?, description: String?, resourceURI: String?, urls: Array<URL>?, startYear: Int?, endYear: Int?, rating: String?, modified: Date?, thumbnail: MarvelImage?, comics: Array<CommicsModel>?, stories: Array<StoriesModel>?, events: Array<EventsModel>?, characters: Array<CharactersModel>?, next: Array<SeriesModel>?, previous: Array<SeriesModel>?) {
+    public init(id: Int?, title: String?, description: String?, resourceURI: String?, urls: Array<URL>?, startYear: Int?, endYear: Int?, rating: String?, modified: Date?, thumbnail: MarvelImage?, comics: Array<ComicsModel>?, stories: Array<StoriesModel>?, events: Array<EventsModel>?, characters: Array<CharactersModel>?, next: Array<SeriesModel>?, previous: Array<SeriesModel>?) {
         
         self.id = id
         self.title = title
@@ -80,7 +80,7 @@ public struct SeriesModel: Model {
             self.rating = try container.decodeIfPresent(String.self, forKey: .ratting)
             self.modified = try container.decodeIfPresent(Date.self, forKey: .modified)
             self.thumbnail = try container.decodeIfPresent(MarvelImage.self, forKey: .thumbnail)
-            self.comics = try container.decodeIfPresent([CommicsModel].self, forKey: .comics)
+            self.comics = try container.decodeIfPresent([ComicsModel].self, forKey: .comics)
             self.stories = try container.decodeIfPresent([StoriesModel].self, forKey: .stories)
             self.events = try container.decodeIfPresent([EventsModel].self, forKey: .events)
             self.characters = try container.decodeIfPresent([CharactersModel].self, forKey: .characters)

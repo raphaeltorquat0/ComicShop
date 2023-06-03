@@ -32,14 +32,14 @@ public struct StoriesModel: Model {
     public var type: String?
     public var modified: Date?
     public var thumbnail: MarvelImage?
-    public var comics: Array<CommicsModel>?
+    public var comics: Array<ComicsModel>?
     public var series: Array<SeriesModel>?
     public var events: Array<EventsModel>?
     public var characters: Array<CharactersModel>?
     public var creators: Array<CreatorsModel>?
-    public var originalIssue: CommicsModel?
+    public var originalIssue: ComicsModel?
     
-    public init(id: Int?, title: String?, description: String?, resourceURI: String?, type: String?, modified: Date?, thumbnail: MarvelImage?, comics: Array<CommicsModel>?, series: Array<SeriesModel>?, events: Array<EventsModel>?, characters: Array<CharactersModel>?, creators: Array<CreatorsModel>?, originalIssue: CommicsModel?) throws {
+    public init(id: Int?, title: String?, description: String?, resourceURI: String?, type: String?, modified: Date?, thumbnail: MarvelImage?, comics: Array<ComicsModel>?, series: Array<SeriesModel>?, events: Array<EventsModel>?, characters: Array<CharactersModel>?, creators: Array<CreatorsModel>?, originalIssue: ComicsModel?) throws {
         self.id = id
         self.title = title
         self.description = description
@@ -65,12 +65,12 @@ public struct StoriesModel: Model {
             self.type = try container.decodeIfPresent(String.self, forKey: .type)
             self.modified = try container.decodeIfPresent(Date.self, forKey: .modified)
             self.thumbnail = try container.decodeIfPresent(MarvelImage.self, forKey: .thumbnail)
-            self.comics = try container.decodeIfPresent([CommicsModel].self, forKey: .comics)
+            self.comics = try container.decodeIfPresent([ComicsModel].self, forKey: .comics)
             self.series = try container.decodeIfPresent([SeriesModel].self, forKey: .series)
             self.events = try container.decodeIfPresent([EventsModel].self, forKey: .events)
             self.characters = try container.decodeIfPresent([CharactersModel].self, forKey: .characters)
             self.creators = try container.decodeIfPresent([CreatorsModel].self, forKey: .creators)
-            self.originalIssue = try container.decodeIfPresent(CommicsModel.self, forKey: .originalIssue)
+            self.originalIssue = try container.decodeIfPresent(ComicsModel.self, forKey: .originalIssue)
         } catch {
             print("error:\(error.localizedDescription)")
         }

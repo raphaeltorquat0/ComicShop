@@ -19,7 +19,7 @@ public struct CharactersModel: Model {
     public var resourceURI: String?
     public var urls: Array<URL>?
     public var thumbnail: MarvelImage?
-    public var comics: Array<CommicsModel>?
+    public var comics: Array<ComicsModel>?
     public var stories: Array<StoriesModel>?
     public var events: Array<EventsModel>?
     public var series: Array<SeriesModel>?
@@ -38,7 +38,7 @@ public struct CharactersModel: Model {
         case series
     }
     
-    public init(id: Int?, name: String?, description: String?, modified: Date?, resourceURI: String?, urls: Array<URL>?, thumbnail: MarvelImage?, comics: Array<CommicsModel>?, stories: Array<StoriesModel>?, events: Array<EventsModel>?, series: Array<SeriesModel>?) {
+    public init(id: Int?, name: String?, description: String?, modified: Date?, resourceURI: String?, urls: Array<URL>?, thumbnail: MarvelImage?, comics: Array<ComicsModel>?, stories: Array<StoriesModel>?, events: Array<EventsModel>?, series: Array<SeriesModel>?) {
         self.id = id
         self.name = name
         self.description = description
@@ -62,7 +62,7 @@ public struct CharactersModel: Model {
             resourceURI = try decoder.decode(String.self, forKey: .resourceURI)
             urls = try decoder.decode([URL].self, forKey: .urls)
             thumbnail = try decoder.decode(MarvelImage.self, forKey: .thumbnail)
-            comics = try decoder.decode([CommicsModel].self, forKey: .comics)
+            comics = try decoder.decode([ComicsModel].self, forKey: .comics)
             stories = try decoder.decode([StoriesModel].self, forKey: .stories)
             events = try decoder.decode([EventsModel].self, forKey: .events)
             series = try decoder.decode([SeriesModel].self, forKey: .series)

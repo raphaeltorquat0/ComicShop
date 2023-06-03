@@ -353,11 +353,11 @@ struct LoadLocal {
             case fileDecodingFailed(name: String, Swift.Error)
         }
         
-        static func loadBundleContentComics() throws -> CommicsModel? {
+        static func loadBundleContentComics() throws -> ComicsModel? {
             
             do {
                 let data = ContentLoader.init().comicMock.data(using: .utf8)!
-                let decoder = try JSONDecoder().decode(CommicsModel.self, from: data)
+                let decoder = try JSONDecoder().decode(ComicsModel.self, from: data)
                 return  decoder
             } catch {
                 throw Error.fileDecodingFailed(name: ContentLoader.init().comicMock, error)

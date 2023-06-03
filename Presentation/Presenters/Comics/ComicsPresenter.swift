@@ -12,24 +12,37 @@ public final class ComicsPresenter {
     private let alertView: AlertView
     private let loadingView: LoadingView
     private let getComics: GetComics
+    private (set) var comics: ComicsModel?
     
     public init(alertView: AlertView, loadingView: LoadingView, getComics: GetComics) {
         self.alertView = alertView
         self.loadingView = loadingView
         self.getComics = getComics
+        self.loadComics()
     }
     
     public func loadComics() {
         loadingView.display(viewModel: LoadingViewModel(isLoading: true))
-        getComics.get { [weak self] result in
+        getComics.getCommicsModel { [weak self] result in
             guard let self = self else { return }
             switch result {
-            case .failure:
+            case .failure(let error):
                 self.alertView.showMessage(viewModel: AlertViewModel(title: "Erro", message: "Algo inesperado aconteceu, tente novamente mais tarde."))
+                print("Error..\(error.localizedDescription)")
             case .success(let comics):
-                self.loadingView.display(viewModel: LoadingViewModel(isLoading: false))
-                self.alertView.showMessage(viewModel: AlertViewModel(title: "Sucesso", message: "Carregado com sucesso."))
+                self.loadingView.display(viewModel: LoadingViewModel.init(isLoading: false))
+                self.alertView.showMessage(viewModel: AlertViewModel(title: "Sucesso", message: "Carregado com sucesso"))
+                self.comics = comics
+                break
             }
+        }
+    }
+    
+    public func fetchComics() -> ComicsModel? {
+        if self.comics != nil {
+            return self.comics
+        } else {
+            return nil
         }
     }
 }

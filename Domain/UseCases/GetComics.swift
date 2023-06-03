@@ -7,9 +7,9 @@
 
 import Foundation
 
-public protocol GetCommics {
-    typealias Result = Swift.Result<CommicsModel, DomainErrors>
-    func get(getCommicsModel: CommicsModel, completion: @escaping(Result) -> Void)
+public protocol GetComics {
+    typealias Result = Swift.Result<ComicsModel, DomainErrors>
+    func getCommicsModel(_ completion: @escaping(Result) -> Void)
 }
 
 public struct GetCommicsModel: GetData {

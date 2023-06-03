@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct CommicsModel: Model {
-    public static func == (lhs: CommicsModel, rhs: CommicsModel) -> Bool {
+public struct ComicsModel: Model {
+    public static func == (lhs: ComicsModel, rhs: ComicsModel) -> Bool {
         return (lhs.id == rhs.id) && (lhs.digitalId == rhs.digitalId) && (lhs.title == rhs.title) && (lhs.issueNumber == rhs.issueNumber) && (lhs.variantDescription == rhs.variantDescription) && (lhs.description == rhs.description) && (lhs.modified == rhs.modified) && (lhs.isbn == rhs.isbn) && (lhs.diamondCode == rhs.diamondCode) && (lhs.ean == rhs.ean) && ((lhs.issn != nil) && (rhs.issn != nil)) && (lhs.format == rhs.format) && (lhs.pageCount == rhs.pageCount) && (lhs.textObjects == rhs.textObjects) && (lhs.resourceURI == rhs.resourceURI) && (lhs.urls == rhs.urls) && (lhs.series == rhs.series) && (lhs.variants == rhs.variants) && (lhs.collections == rhs.collections) && (lhs.collectedIssues == rhs.collectedIssues) && (lhs.dates == rhs.dates) && (lhs.prices == rhs.prices) && (lhs.thumbnail == rhs.thumbnail) && (lhs.images == rhs.images) && (lhs.creators == rhs.creators) && (lhs.characters == rhs.characters) && (lhs.stories == rhs.stories) && (lhs.events == rhs.events)
     }
     
@@ -60,9 +60,9 @@ public struct CommicsModel: Model {
     public var resourceURI: String?
     public var urls: Array<URL>?
     public var series: Array<SeriesModel>?
-    public var variants: Array<CommicsModel>?
-    public var collections: Array<CommicsModel>?
-    public var collectedIssues: Array<CommicsModel>?
+    public var variants: Array<ComicsModel>?
+    public var collections: Array<ComicsModel>?
+    public var collectedIssues: Array<ComicsModel>?
     public var dates: Array<Date>?
     public var prices: [Bool]?
     public var thumbnail: MarvelImage?
@@ -72,7 +72,7 @@ public struct CommicsModel: Model {
     public var stories: Array<StoriesModel>?
     public var events: Array<EventsModel>?
     
-    public init(id: Int?, digitalId: Int?, title: String?, issueNumber: Int?, variantDescription: String?, description: String?, modified: Date?, isbn: String?, diamondCode: String?, ean: String?, issn: String?, format: String?, pageCount: Int?, textObjects: Array<TextObject>?, resourceURI: String?, urls: Array<URL>?, series: Array<SeriesModel>?, variants: Array<CommicsModel>?, collections: Array<CommicsModel>?, collectedIssues: Array<CommicsModel>?, dates: Array<Date>?, prices: [Bool]?, thumbnail: MarvelImage?, images: Array<MarvelImage>?, creators: Array<CreatorsModel>?, characters: Array<CharactersModel>?, stories: Array<StoriesModel>?, events: Array<EventsModel>?) throws {
+    public init(id: Int?, digitalId: Int?, title: String?, issueNumber: Int?, variantDescription: String?, description: String?, modified: Date?, isbn: String?, diamondCode: String?, ean: String?, issn: String?, format: String?, pageCount: Int?, textObjects: Array<TextObject>?, resourceURI: String?, urls: Array<URL>?, series: Array<SeriesModel>?, variants: Array<ComicsModel>?, collections: Array<ComicsModel>?, collectedIssues: Array<ComicsModel>?, dates: Array<Date>?, prices: [Bool]?, thumbnail: MarvelImage?, images: Array<MarvelImage>?, creators: Array<CreatorsModel>?, characters: Array<CharactersModel>?, stories: Array<StoriesModel>?, events: Array<EventsModel>?) throws {
         
         self.id = id
         self.digitalId = digitalId
@@ -124,9 +124,9 @@ public struct CommicsModel: Model {
              resourceURI = try decoder.decode(String.self, forKey: .resourceURI)
              urls = try decoder.decode([URL].self, forKey: .urls)
              series = try decoder.decode([SeriesModel].self, forKey: .series)
-             variants = try decoder.decode([CommicsModel].self, forKey: .variants)
-             collections = try decoder.decode([CommicsModel].self, forKey: .collections)
-             collectedIssues = try decoder.decode([CommicsModel].self, forKey: .collectedIssues)
+             variants = try decoder.decode([ComicsModel].self, forKey: .variants)
+             collections = try decoder.decode([ComicsModel].self, forKey: .collections)
+             collectedIssues = try decoder.decode([ComicsModel].self, forKey: .collectedIssues)
              dates = try decoder.decode([Date].self, forKey: .dates)
              prices = try decoder.decode([Bool].self, forKey: .prices)
              thumbnail = try decoder.decode(MarvelImage.self, forKey: .thumbnail)
