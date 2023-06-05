@@ -17,8 +17,8 @@
 		3F290E2F2A2A682C0030C86E /* PresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F290E2E2A2A682C0030C86E /* PresentationTests.swift */; };
 		3F290E302A2A682C0030C86E /* Presentation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F290E242A2A682B0030C86E /* Presentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F290E392A2A687F0030C86E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F290E382A2A687F0030C86E /* LoadingView.swift */; };
-		3F290E412A2AB7F30030C86E /* ComicsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F290E402A2AB7F30030C86E /* ComicsRequest.swift */; };
-		3F290E432A2AB8070030C86E /* CharactersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F290E422A2AB8070030C86E /* CharactersRequest.swift */; };
+		3F290E412A2AB7F30030C86E /* ComicsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F290E402A2AB7F30030C86E /* ComicsViewModel.swift */; };
+		3F290E432A2AB8070030C86E /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F290E422A2AB8070030C86E /* CharactersViewModel.swift */; };
 		3F290E452A2ABFB00030C86E /* CharactersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F290E442A2ABFB00030C86E /* CharactersPresenter.swift */; };
 		3F290E472A2ABFBE0030C86E /* ComicsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F290E462A2ABFBE0030C86E /* ComicsPresenter.swift */; };
 		3F290E4B2A2ABFF90030C86E /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F290E4A2A2ABFF90030C86E /* AlertView.swift */; };
@@ -33,7 +33,11 @@
 		3F290E652A2ACB900030C86E /* CreatorsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F290E5A2A2ACB900030C86E /* CreatorsPresenterTests.swift */; };
 		3F290E662A2ACB900030C86E /* CharactersPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F290E5C2A2ACB900030C86E /* CharactersPresenterTests.swift */; };
 		3F290E6A2A2ACBA80030C86E /* CreatorsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F290E682A2ACBA70030C86E /* CreatorsPresenter.swift */; };
-		3F290E6B2A2ACBA80030C86E /* CreatorsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F290E692A2ACBA70030C86E /* CreatorsRequest.swift */; };
+		3F290E6B2A2ACBA80030C86E /* CreatorsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F290E692A2ACBA70030C86E /* CreatorsViewModel.swift */; };
+		3F290E6C2A2D26E50030C86E /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45CA7B2A293E0000B920EB /* XCTestCase+Extension.swift */; };
+		3F290E6E2A2D28850030C86E /* GetComicsSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F290E6D2A2D28850030C86E /* GetComicsSpy.swift */; };
+		3F290E702A2D29C10030C86E /* GetCreatorsSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F290E6F2A2D29C10030C86E /* GetCreatorsSpy.swift */; };
+		3F290E722A2D2A5D0030C86E /* GetCharactersSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F290E712A2D2A5D0030C86E /* GetCharactersSpy.swift */; };
 		3F45C98C2A293BCE00B920EB /* ComicShopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45C98B2A293BCE00B920EB /* ComicShopApp.swift */; };
 		3F45C98E2A293BCE00B920EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45C98D2A293BCE00B920EB /* ContentView.swift */; };
 		3F45C9902A293BD000B920EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F45C98F2A293BD000B920EB /* Assets.xcassets */; };
@@ -136,6 +140,7 @@
 		3F89C4B92A2A2C77004E95D1 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F89C4B82A2A2C77004E95D1 /* URLProtocolStub.swift */; };
 		3F89C4BA2A2A2C77004E95D1 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F89C4B82A2A2C77004E95D1 /* URLProtocolStub.swift */; };
 		3F89C4BB2A2A2FBA004E95D1 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45CA7B2A293E0000B920EB /* XCTestCase+Extension.swift */; };
+		3FA95BCA2A2D81BC00F30DF4 /* SupportsLocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F45CA792A293E0000B920EB /* SupportsLocalData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,8 +209,8 @@
 		3F290E292A2A682B0030C86E /* PresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F290E2E2A2A682C0030C86E /* PresentationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationTests.swift; sourceTree = "<group>"; };
 		3F290E382A2A687F0030C86E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		3F290E402A2AB7F30030C86E /* ComicsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsRequest.swift; sourceTree = "<group>"; };
-		3F290E422A2AB8070030C86E /* CharactersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRequest.swift; sourceTree = "<group>"; };
+		3F290E402A2AB7F30030C86E /* ComicsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsViewModel.swift; sourceTree = "<group>"; };
+		3F290E422A2AB8070030C86E /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
 		3F290E442A2ABFB00030C86E /* CharactersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersPresenter.swift; sourceTree = "<group>"; };
 		3F290E462A2ABFBE0030C86E /* ComicsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsPresenter.swift; sourceTree = "<group>"; };
 		3F290E4A2A2ABFF90030C86E /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
@@ -220,7 +225,10 @@
 		3F290E5A2A2ACB900030C86E /* CreatorsPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorsPresenterTests.swift; sourceTree = "<group>"; };
 		3F290E5C2A2ACB900030C86E /* CharactersPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersPresenterTests.swift; sourceTree = "<group>"; };
 		3F290E682A2ACBA70030C86E /* CreatorsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorsPresenter.swift; sourceTree = "<group>"; };
-		3F290E692A2ACBA70030C86E /* CreatorsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorsRequest.swift; sourceTree = "<group>"; };
+		3F290E692A2ACBA70030C86E /* CreatorsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorsViewModel.swift; sourceTree = "<group>"; };
+		3F290E6D2A2D28850030C86E /* GetComicsSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetComicsSpy.swift; sourceTree = "<group>"; };
+		3F290E6F2A2D29C10030C86E /* GetCreatorsSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCreatorsSpy.swift; sourceTree = "<group>"; };
+		3F290E712A2D2A5D0030C86E /* GetCharactersSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersSpy.swift; sourceTree = "<group>"; };
 		3F45C9882A293BCE00B920EB /* ComicShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComicShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F45C98B2A293BCE00B920EB /* ComicShopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicShopApp.swift; sourceTree = "<group>"; };
 		3F45C98D2A293BCE00B920EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -405,7 +413,7 @@
 		3F290E3B2A2AB7890030C86E /* Character */ = {
 			isa = PBXGroup;
 			children = (
-				3F290E422A2AB8070030C86E /* CharactersRequest.swift */,
+				3F290E422A2AB8070030C86E /* CharactersViewModel.swift */,
 				3F290E442A2ABFB00030C86E /* CharactersPresenter.swift */,
 			);
 			path = Character;
@@ -414,7 +422,7 @@
 		3F290E3C2A2AB79A0030C86E /* Comics */ = {
 			isa = PBXGroup;
 			children = (
-				3F290E402A2AB7F30030C86E /* ComicsRequest.swift */,
+				3F290E402A2AB7F30030C86E /* ComicsViewModel.swift */,
 				3F290E462A2ABFBE0030C86E /* ComicsPresenter.swift */,
 			);
 			path = Comics;
@@ -461,6 +469,7 @@
 			isa = PBXGroup;
 			children = (
 				3F290E582A2ACB900030C86E /* ComicsPresenterTests.swift */,
+				3F290E6D2A2D28850030C86E /* GetComicsSpy.swift */,
 			);
 			path = Comics;
 			sourceTree = "<group>";
@@ -469,6 +478,7 @@
 			isa = PBXGroup;
 			children = (
 				3F290E5A2A2ACB900030C86E /* CreatorsPresenterTests.swift */,
+				3F290E6F2A2D29C10030C86E /* GetCreatorsSpy.swift */,
 			);
 			path = Creators;
 			sourceTree = "<group>";
@@ -477,6 +487,7 @@
 			isa = PBXGroup;
 			children = (
 				3F290E5C2A2ACB900030C86E /* CharactersPresenterTests.swift */,
+				3F290E712A2D2A5D0030C86E /* GetCharactersSpy.swift */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
@@ -485,7 +496,7 @@
 			isa = PBXGroup;
 			children = (
 				3F290E682A2ACBA70030C86E /* CreatorsPresenter.swift */,
-				3F290E692A2ACBA70030C86E /* CreatorsRequest.swift */,
+				3F290E692A2ACBA70030C86E /* CreatorsViewModel.swift */,
 			);
 			path = Creators;
 			sourceTree = "<group>";
@@ -1093,12 +1104,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F290E432A2AB8070030C86E /* CharactersRequest.swift in Sources */,
+				3F290E432A2AB8070030C86E /* CharactersViewModel.swift in Sources */,
 				3F290E452A2ABFB00030C86E /* CharactersPresenter.swift in Sources */,
-				3F290E412A2AB7F30030C86E /* ComicsRequest.swift in Sources */,
+				3F290E412A2AB7F30030C86E /* ComicsViewModel.swift in Sources */,
 				3F290E472A2ABFBE0030C86E /* ComicsPresenter.swift in Sources */,
 				3F290E4B2A2ABFF90030C86E /* AlertView.swift in Sources */,
-				3F290E6B2A2ACBA80030C86E /* CreatorsRequest.swift in Sources */,
+				3F290E6B2A2ACBA80030C86E /* CreatorsViewModel.swift in Sources */,
 				3F290E392A2A687F0030C86E /* LoadingView.swift in Sources */,
 				3F290E6A2A2ACBA80030C86E /* CreatorsPresenter.swift in Sources */,
 			);
@@ -1108,14 +1119,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F290E6C2A2D26E50030C86E /* XCTestCase+Extension.swift in Sources */,
+				3F290E6E2A2D28850030C86E /* GetComicsSpy.swift in Sources */,
+				3F290E722A2D2A5D0030C86E /* GetCharactersSpy.swift in Sources */,
 				3F290E642A2ACB900030C86E /* ComicsPresenterTests.swift in Sources */,
 				3F290E2F2A2A682C0030C86E /* PresentationTests.swift in Sources */,
 				3F290E5D2A2ACB900030C86E /* PresentationTests.swift in Sources */,
 				3F290E662A2ACB900030C86E /* CharactersPresenterTests.swift in Sources */,
+				3FA95BCA2A2D81BC00F30DF4 /* SupportsLocalData.swift in Sources */,
 				3F290E612A2ACB900030C86E /* LoadingViewSpy.swift in Sources */,
 				3F290E5E2A2ACB900030C86E /* CharactersSpy.swift in Sources */,
 				3F290E652A2ACB900030C86E /* CreatorsPresenterTests.swift in Sources */,
 				3F290E5F2A2ACB900030C86E /* CreatorsSpy.swift in Sources */,
+				3F290E702A2D29C10030C86E /* GetCreatorsSpy.swift in Sources */,
 				3F290E622A2ACB900030C86E /* AlertViewSpy.swift in Sources */,
 				3F290E632A2ACB900030C86E /* TestFactories.swift in Sources */,
 				3F290E602A2ACB900030C86E /* ComicsSpy.swift in Sources */,

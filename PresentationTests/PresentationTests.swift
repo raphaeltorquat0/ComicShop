@@ -7,30 +7,35 @@
 
 import XCTest
 @testable import Presentation
+import Data
 
-final class PresentationTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+func makeComicsViewModel() -> GetComicsViewModel? {
+    do {
+        let comicsViewModel = GetComicsViewModel(model: try LoadLocal.loadBundleContentComics()!)
+        return comicsViewModel
+    } catch {
+        print("error..\(error.localizedDescription)")
+        return nil
     }
+}
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+func makeCharactersViewModel() -> GetCharactersViewModel? {
+    do {
+        let charactersViewModel = GetCharactersViewModel(model: try LoadLocal.loadBundleContentCharacters()!)
+        return charactersViewModel
+    } catch {
+        print("error..\(error.localizedDescription)")
+        return nil
     }
+}
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+func makeCreatorsToViewModel() -> GetCreatorsViewModel? {
+    do {
+        let creatorsViewModel = GetCreatorsViewModel(model: try LoadLocal.loadBundleContentCreators()!)
+        return creatorsViewModel
+    } catch {
+        print("error..\(error.localizedDescription)")
+        return nil
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+    
 }
